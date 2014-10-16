@@ -281,6 +281,7 @@ You can create and attach additional disks to a VM via `libvirt.storage :file`. 
 * `device` - Name of the device node the disk image will have in the VM, e.g. *vdb*. If unspecified, the next available device is chosen.
 * `size` - Size of the disk image. If unspecified, defaults to 10G.
 * `type` - Type of disk image to create. Defaults to *qcow2*.
+* `allow_existing` - Set to true if you want to allow the VM to use a pre-existing disk.  This is useful for sharing disks between VMs, e.g. in order to simulate shared SAN storage.
 
 The following example creates two additional disks.
 
