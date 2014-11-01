@@ -134,8 +134,6 @@ module VagrantPlugins
         }.merge(options)
 
         #puts "storage(#{storage_type} --- #{options.to_s})"
-        require 'pry'
-        binding.pry
         @disks = [] if @disks == UNSET_VALUE
 
         disk = {
@@ -144,6 +142,7 @@ module VagrantPlugins
           :size => options[:size],
           :path => options[:path],
           :allow_existing => options[:allow_existing],
+          :cache => options[:cache] || 'default',
         }
 
         if storage_type == :file
